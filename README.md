@@ -699,7 +699,11 @@ This website is created for **educational purposes only**.
 
 **Made with ❤️ by Jony Mar Barrete**
 
-[🌐 Visit Live Site](https://primelot.kesug.com/) | [📧 Contact Developer](mailto:jonymarbarrete88@gmail.com) | [📂 GitHub Repository](https://github.com/jonymarbravo/Primelot-Realty)
+### 🔗 Quick Links
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-orange?style=for-the-badge&logo=google-chrome&logoColor=white)](https://primelot.kesug.com/)
+[![Email](https://img.shields.io/badge/Email-Contact%20Developer-red?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jonymarbarrete88@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jonymarbravo/Primelot-Realty)
 
 ---
 
