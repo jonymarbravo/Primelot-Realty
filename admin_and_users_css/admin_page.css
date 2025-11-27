@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-shadow {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.box-shadow {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inset-shadow {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Main scrollbar track */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4c93 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transform: scale(1.1);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #4e5fd1 0%, #5d4284 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+}
+
+.main_container {
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.page-header {
+    padding: 30px 0;
+    width: 100%;
+}
+
+.page-header h1 {
+    font-weight: 700;
+    font-size: 36px;
+    color: #000000;
+}
+
+.buttons_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+
+.buttons_container a {
+    padding: 20px 0;
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.appointment_link_btn, .statistic_link_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.appointment_link_btn:hover, .statistic_link_btn:hover {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-bottom: 2px solid #000000;
+}
+
+.appointment_link_btn.active, .statistic_link_btn.active {
+    background-color: #e9ecef;
+    border-bottom: 3px solid #007bff;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.admin_contents {
+    width: 100%;
+}
+
+.admin_contents .welcoming_txt h1 {
+    font-weight: 800;
+    color: #000000;
+}
+
+.welcoming_txt {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appointments_container {
+    display: none;
+    height: 75vh;
+    padding: 30px 0 10px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.appointments_container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.appointments_container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.appointments_container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.appointments_container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+.appointments_container .table th {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.appointments_container .table td,
+.appointments_container .table th {
+    font-size: 12px;
+}
+
+.statistics_container {
+    display: none;
+    height: 75vh;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+/* Statistics specific styles */
+.stats-card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    min-height: 140px;
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.stats-card .card-body {
+    padding: 1.5rem;
+}
+
+.stats-card .card-title {
+    font-weight: 600;
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stats-card .card-text h2 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+/* Chart container styling */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* Delete button styles */
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.delete-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.6;
+}
+
+/* Chart container */
+#appointmentsChart {
+    max-height: 400px;
+    width: 100%;
+}
+
+/* Alert positioning */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Logout button styling */
+.logout-btn-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.logout-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+    background: linear-gradient(135deg, #c82333, #a71e2a);
+}
+
+.logout-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* Modal customizations */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header.bg-danger {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.modal-footer {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px;
+}
+
+.modal-body {
+    padding: 30px 20px;
+}
+
+/* Button hover effects in modal */
+.modal-footer .btn {
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.modal-footer .btn-secondary {
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+    background: linear-gradient(135deg, #5a6268, #495057);
+    transform: translateY(-2px);
+}
+
+.modal-footer .btn-danger {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    border: none;
+}
+
+.modal-footer .btn-danger:hover {
+    background: linear-gradient(135deg, #c82333, #a71e2a);
+    transform: translateY(-2px);
+}
+
+/* Card hover effects */
+.card {
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-1px);
+}
+
+/* Table responsive improvements */
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    border-top: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0,123,255,0.1);
+}
+
+/* Statistics container improvements */
+.statistics_container h2 {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.statistics_container .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+}
+
+.statistics_container .card-header h5 {
+    color: #495057;
+    margin: 0;
+}
+
+/* Loading animation */
+.fa-spin {
+    animation: fa-spin 1s infinite linear;
+}
+
+@keyframes fa-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ======= RESPONSIVE DESIGN IMPROVEMENTS ======= */
+
+/* Tablet and medium screens */
+@media (max-width: 992px) {
+    .page-header h1 {
+        font-size: 32px;
+    }
+    
+    .buttons_container a {
+        font-size: 18px;
+        padding: 18px 0;
+    }
+    
+    .stats-card .card-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .chart-container {
+        height: 280px;
+    }
+    
+    .logout-btn-container {
+        bottom: 25px;
+        right: 25px;
+    }
+}
+
+/* Mobile and small tablets */
+@media (max-width: 768px) {
+    .main_container {
+        padding: 5px;
+    }
+    
+    .page-header {
+        padding: 20px 0;
+    }
+    
+    .page-header h1 {
+        font-size: 28px;
+    }
+    
+    .buttons_container a {
+        font-size: 16px;
+        padding: 15px 0;
+    }
+    
+    .logout-btn-container {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .logout-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .appointments_container .table td,
+    .appointments_container .table th {
+        font-size: 10px;
+        padding: 8px 4px;
+    }
+    
+    .stats-card .card-text h2 {
+        font-size: 2rem;
+    }
+    
+    .stats-card .card-body {
+        padding: 1rem;
+    }
+    
+    .statistics_container {
+        padding: 15px 0;
+    }
+    
+    .statistics_container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+    
+    .alert {
+        position: relative;
+        top: 0;
+        right: 0;
+        max-width: 100%;
+        margin: 10px;
+    }
+    
+    .welcoming_txt h1 {
+        font-size: 1.8rem;
+        padding: 0 20px;
+        text-align: center;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 576px) {
+    .page-header h1 {
+        font-size: 24px;
+    }
+    
+    .buttons_container a {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+    
+    .delete-btn {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    .stats-card .card-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .stats-card .card-title {
+        font-size: 0.8rem;
+    }
+    
+    .stats-card .card-body {
+        padding: 0.8rem;
+    }
+    
+    .statistics_container h2 {
+        font-size: 1.3rem;
+    }
+    
+    .chart-container {
+        height: 220px;
+    }
+    
+    .appointments_container .table td,
+    .appointments_container .table th {
+        font-size: 9px;
+        padding: 6px 2px;
+    }
+    
+    .welcoming_txt h1 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 20px 15px;
+    }
+    
+    .modal-footer .btn {
+        min-width: 80px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small screens (360px and below) */
+@media (max-width: 380px) {
+    .main_container {
+        padding: 3px;
+    }
+    
+    .page-header {
+        padding: 15px 0;
+    }
+    
+    .page-header h1 {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    
+    .buttons_container a {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+    
+    .stats-card {
+        min-height: 120px;
+    }
+    
+    .stats-card .card-text h2 {
+        font-size: 1.6rem;
+        margin: 5px 0;
+    }
+    
+    .stats-card .card-title {
+        font-size: 0.75rem;
+    }
+    
+    .stats-card .card-body {
+        padding: 0.6rem;
+    }
+    
+    .stats-card .card-text p {
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    
+    .statistics_container {
+        padding: 10px 0;
+    }
+    
+    .statistics_container h2 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+    
+    .chart-container {
+        height: 200px;
+        margin: 0 -10px;
+    }
+    
+    .statistics_container .card-header h5 {
+        font-size: 0.9rem;
+    }
+    
+    .statistics_container .card-body {
+        padding: 0.5rem;
+    }
+    
+    .appointments_container {
+        padding: 20px 0 10px 0;
+        height: 70vh;
+    }
+    
+    .appointments_container .table td,
+    .appointments_container .table th {
+        font-size: 8px;
+        padding: 4px 1px;
+        word-break: break-word;
+    }
+    
+    .welcoming_txt {
+        height: 70vh;
+        padding: 0 15px;
+    }
+    
+    .welcoming_txt h1 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+    
+    .logout-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    .logout-btn-container {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Very small screens (320px and below) */
+@media (max-width: 320px) {
+    .page-header h1 {
+        font-size: 18px;
+    }
+    
+    .stats-card .card-text h2 {
+        font-size: 1.4rem;
+    }
+    
+    .statistics_container h2 {
+        font-size: 1rem;
+    }
+    
+    .chart-container {
+        height: 180px;
+    }
+    
+    .welcoming_txt h1 {
+        font-size: 1.1rem;
+    }
+    
+    .appointments_container .table {
+        font-size: 7px;
+    }
+    
+    .buttons_container a {
+        font-size: 11px;
+    }
+}
