@@ -1,0 +1,66 @@
+# Primelot Realty - Git Ignore File
+
+# Sensitive Configuration Files (NEVER COMMIT THESE!)
+config.php
+.env
+*.env
+
+# Database Backups
+*.sql.backup
+*.sql.gz
+backup/
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.bak
+*.cache
+temp/
+tmp/
+
+# Node modules (if using npm)
+node_modules/
+package-lock.json
+
+# Composer (if using Composer)
+/vendor/
+
+# PHP specific
+.phpunit.result.cache
+
+# Upload directories (if storing user uploads)
+uploads/
+user_uploads/
+
+# Session files
+sessions/
+
+# Other sensitive files
+private/
+credentials.txt
+passwords.txt
