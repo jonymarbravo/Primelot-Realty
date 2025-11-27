@@ -1,9 +1,11 @@
 <?php 
+// Database Configuration Template
+// IMPORTANT: Fill in your actual database credentials below
 
-$host = "sql301.infinityfree.com";      
-$user = "if0_39993233";                 
-$password = "wvs0ZHKMJhdBD9";           
-$database = "if0_39993233_users_db";    // this is your InfinityFree DB name
+$host = "your_host_here";           // e.g., "localhost" or "sql301.infinityfree.com"
+$user = "your_username_here";       // Your database username
+$password = "your_password_here";   // Your database password
+$database = "your_database_here";   // Your database name
 
 $conn = new mysqli($host, $user, $password, $database);
 
@@ -11,4 +13,3 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 ?>
-
